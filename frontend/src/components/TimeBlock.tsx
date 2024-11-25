@@ -67,23 +67,26 @@ const TimeBlock: React.FC<TimeBlockProps> = ({
 
   return (
     <div
-      className={`${style} absolute relative text-xs group shadow-lg flex justify-center  transition-transform duration-300 rounded-md `}
+      className={`${style} absolute relative text-xs group shadow-lg flex justify-center hover:scale-105 hover:z-50 transition-transform duration-500 rounded-md `}
       style={{
         left: `${blockStartPosition}px`,
         width: `${blockWidth}px`,
         height: `${height}px`,
       }}
     >
-      {scale <= 250 && <div className="text-[10px]">{title}</div>}
+      {scale <= 250 && (
+        <div className="text-[10px] my-auto group-hover:text-base">{title}</div>
+      )}
 
       <div
         className={`${
           scale > 24 &&
-          "z-20 bg-black text-white  rounded items-start justify-center opacity-0 group-hover:opacity-100"
+          "z-40 bg-black text-white  rounded items-start justify-center opacity-0 group-hover:opacity-100"
         } absolute top-full mt-1 w-32 text-onSurface flex flex-col`}
       >
         {/* <div className="w-full">{title}</div> */}
         <div className="w-full">
+          <div className="">{title}</div>
           {startString} - {endString}
         </div>
       </div>

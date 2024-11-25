@@ -79,7 +79,7 @@ const GanttInterface = () => {
   return (
     <div
       ref={interfaceRef}
-      className="ml-10 flex flex-col justify-center"
+      className="flex flex-col justify-center ml-10"
       style={{ width: timelineWidth }}
     >
       {/* Date/Time inputs for start and end dates */}
@@ -89,7 +89,7 @@ const GanttInterface = () => {
           type="datetime-local"
           value={inputStartDate}
           onChange={handleStartDateChange}
-          className="border p-2 rounded"
+          className="p-2 border rounded"
         />
       </div>
 
@@ -99,12 +99,12 @@ const GanttInterface = () => {
           type="datetime-local"
           value={inputEndDate}
           onChange={handleEndDateChange}
-          className="border p-2 rounded"
+          className="p-2 border rounded"
         />
       </div>
 
       {/* TimeBlockContainerDynamic */}
-      <div className="mb-2 rounded bg-black w-full">
+      <div className="w-full mb-2 bg-black rounded">
         <TimeBlockContainerDynamic />
       </div>
 
@@ -116,8 +116,8 @@ const GanttInterface = () => {
             type={block.type}
             start={new Date(block["Start Date Time"])}
             end={new Date(block["End Date Time"])}
-            height={60}
-            style={`bg-sky-500 border border-sky-600 p-2 z-20 opacity-30 hover:none flex items-end shadow border-black h-full`}
+            height={40}
+            style={`bg-sky-500 border border-sky-600 hover:none flex items-end shadow border-black h-full`}
             title={block.AssignedResource}
             timeLineWidth={timelineWidth}
           />

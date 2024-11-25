@@ -73,7 +73,7 @@ app.get("/schedule", async (req, res) => {
     const response = await axios(config);
 
     // Send back the filtered data
-    console.log(response);
+    console.log(response.data);
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching OData:", error.message);
