@@ -5,7 +5,7 @@ const app = express();
 const PORT = 5001;
 
 app.get("/", (req, res) => {
-  res.send("Hello from the backend!");
+  res.send("Hello from the backend!!");
 });
 
 function formatDateToODataString(date) {
@@ -55,7 +55,8 @@ app.get("/schedule", async (req, res) => {
 
     // console.log(filter);
 
-    const url = `https://fmp.pse.cloud/fmi/odata/v4/Scheduling/ResourceScheduler?${filter}`;
+    const odataUrl = process.env.FM_SERVER_ODATA_URL;
+    const url = `${odataUrl}Scheduling/ResourceScheduler?${filter}`;
 
     const config = {
       method: "GET",
